@@ -59,6 +59,7 @@ public class QuizManager : MonoBehaviour
 
     public void SelectedOption(WordData wordData)
     {
+        if(currentAnswerIndex >= answerWordArray.Length) return;
         answerWordArray[currentAnswerIndex].SetChar(wordData.charValue);
         wordData.gameObject.SetActive(false); //so it cant be clicked again
         currentAnswerIndex++;
