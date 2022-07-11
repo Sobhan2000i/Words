@@ -15,6 +15,13 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     private WordData[] optionsWordArray;
 
+    private void Awake()
+    {
+        if(instance == null) instance = this;
+        else 
+            Destroy(gameObject);
+    }
+
     private void Start()
     {
         SetQuestion();
@@ -22,6 +29,8 @@ public class QuizManager : MonoBehaviour
 
     // Storing all the answers chracter
     private char[] charArray = new char[12];
+    // store next blank
+    private int currentAnswerIndex = 0;
 
     
     //seting charachters for answer
@@ -50,7 +59,9 @@ public class QuizManager : MonoBehaviour
 
     public void SelectedOption(WordData wordData)
     {
-        
+        answerWordArray[currentAnswerIndex].SetChar(wordData.charValue);
+        wordData.gameObject.SetActive(false); //so it cant be clicked again
+        currentAnswerIndex++;
     }
 
     

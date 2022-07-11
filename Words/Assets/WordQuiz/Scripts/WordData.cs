@@ -13,7 +13,7 @@ public class WordData : MonoBehaviour
     // Start is called before the first frame update
      private Button buttonObj;
 
-     private void awake()
+     private void Awake()
      {
          buttonObj = GetComponent<Button>();
 
