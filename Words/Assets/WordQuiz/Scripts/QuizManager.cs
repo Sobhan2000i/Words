@@ -94,7 +94,11 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-
+    public void ResetLastWord()
+    {
+        currentAnswerIndex--;
+        answerWordArray[currentAnswerIndex].SetChar('_');
+    }
 
 
     private void CheckAnswer()
