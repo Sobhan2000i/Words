@@ -145,6 +145,7 @@ public class QuizManager : MonoBehaviour
             if(currentQuestionIndex < questionData.questions.Count)
             {
                 Invoke("SetQuestion" , 0.5f );
+                
             }
             else
             {
