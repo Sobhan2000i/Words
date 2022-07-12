@@ -17,6 +17,14 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     private WordData[] optionsWordArray;
 
+    // Storing all the answers chracter
+    private char[] charArray = new char[12];
+    // store next blank
+    private int currentAnswerIndex = 0;
+    private bool correctAnswer = true;
+    
+   
+   
     private void Awake()
     {
         if(instance == null) instance = this;
@@ -24,20 +32,11 @@ public class QuizManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-
-    // Storing all the answers chracter
-    private char[] charArray = new char[12];
-    // store next blank
-    private int currentAnswerIndex = 0;
-
-    
-
     private void Start()
     {
         SetQuestion();
     }
 
-  
     //seting charachters for answer
     private void SetQuestion()
     {
@@ -69,10 +68,16 @@ public class QuizManager : MonoBehaviour
 
     public void SelectedOption(WordData wordData)
     {
-        if(currentAnswerIndex >= answerWordArray.Length) return;
+        if(currentAnswerIndex >= question.answer.Length) return;
         answerWordArray[currentAnswerIndex].SetChar(wordData.charValue);
         wordData.gameObject.SetActive(false); //so it cant be clicked again
         currentAnswerIndex++;
+
+        if (currentAnswerIndex >= question.answer.Length)
+        {
+            CheckAnswer();
+        }
+
     }
 
     private void ResetQuestion()
@@ -89,8 +94,37 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+
+
+
+    private void CheckAnswer()
+    {
+        correctAnswer = true;
+        for (int i = 0 ; i < question.answer.Length ; i++ )
+        {
+            if (char.ToUpper(question.answer[i]) != char.ToUpper(answerWordArray[i].charValue))
+            {
+                correctAnswer = false;
+                break;
+            }
+        }
+
+        if (correctAnswer)
+        {
+            Debug.Log("Correct");
+        }
+        else if (!correctAnswer)
+        {
+            Debug.Log("Incorrect");
+        }
+        
+    }
+
     
 }
+
+
+   
 
 [System.Serializable]
 public class QuestionData
