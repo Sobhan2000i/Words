@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
     // store next blank
     private int currentAnswerIndex = 0;
     private bool correctAnswer = true;
+    private List<int> selectedWordIndex;
     
    
    
@@ -30,6 +31,8 @@ public class QuizManager : MonoBehaviour
         if(instance == null) instance = this;
         else 
             Destroy(gameObject);
+
+        selectedWordIndex = new List<int>();    
     }
 
     private void Start()
@@ -42,6 +45,7 @@ public class QuizManager : MonoBehaviour
     {
         currentAnswerIndex = 0;
         ResetQuestion();
+        selectedWordIndex.Clear();
 
         questionImage.sprite= question.questionImage;
 
@@ -69,6 +73,8 @@ public class QuizManager : MonoBehaviour
     public void SelectedOption(WordData wordData)
     {
         if(currentAnswerIndex >= question.answer.Length) return;
+
+        selectedWordIndex.Add(wordData.transform.GetSiblingIndex());
         answerWordArray[currentAnswerIndex].SetChar(wordData.charValue);
         wordData.gameObject.SetActive(false); //so it cant be clicked again
         currentAnswerIndex++;
@@ -96,8 +102,14 @@ public class QuizManager : MonoBehaviour
 
     public void ResetLastWord()
     {
-        currentAnswerIndex--;
-        answerWordArray[currentAnswerIndex].SetChar('_');
+        if (selectedWordIndex.Count > 0 )
+        {
+            int index = selectedWordIndex[selectedWordIndex.Count - 1];
+            optionsWordArray[index].gameObject.SetActive(true);
+            selectedWordIndex.RemoveAt(selectedWordIndex.Count - 1);
+            currentAnswerIndex--;
+            answerWordArray[currentAnswerIndex].SetChar('_');
+        }
     }
 
 
