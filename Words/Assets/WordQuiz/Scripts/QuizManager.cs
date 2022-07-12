@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class QuizManager : MonoBehaviour
 {
     public static QuizManager instance;
-
+    [SerializeField] private GameObject gameOver;
     [SerializeField]
-    private QuestionData question;
+    private QuizData questionData;
     [SerializeField]
     private Image questionImage;
     [SerializeField]
@@ -17,12 +17,16 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     private WordData[] optionsWordArray;
 
+
     // Storing all the answers chracter
     private char[] charArray = new char[12];
     // store next blank
     private int currentAnswerIndex = 0;
     private bool correctAnswer = true;
     private List<int> selectedWordIndex;
+    private int currentQuestionIndex = 0 ;
+    private GameStatus gameStatus = GameStatus.Playing;
+    private string Answer;
     
    
    
@@ -44,17 +48,18 @@ public class QuizManager : MonoBehaviour
     private void SetQuestion()
     {
         currentAnswerIndex = 0;
-        ResetQuestion();
         selectedWordIndex.Clear();
+        questionImage.sprite= questionData.questions[currentQuestionIndex].questionImage;
+        Answer = questionData.questions[currentQuestionIndex].answer;
 
-        questionImage.sprite= question.questionImage;
+        ResetQuestion();
 
-        for (int i = 0; i < question.answer.Length; i++)
+        for (int i = 0; i < Answer.Length; i++)
         {
-            charArray[i] = char.ToUpper(question.answer[i]);
+            charArray[i] = char.ToUpper(Answer[i]);
         }
 
-        for (int i = question.answer.Length; i < optionsWordArray.Length; i++)
+        for (int i = Answer.Length; i < optionsWordArray.Length; i++)
         {
              charArray[i] = (char)UnityEngine.Random.Range(65 , 91);
         }
@@ -67,19 +72,22 @@ public class QuizManager : MonoBehaviour
             optionsWordArray[i].SetChar(charArray[i]);
         }
 
+        currentQuestionIndex++;
+        gameStatus = GameStatus.Playing;
+
 
     }
 
     public void SelectedOption(WordData wordData)
     {
-        if(currentAnswerIndex >= question.answer.Length) return;
+        if(gameStatus == GameStatus.Next || currentAnswerIndex >= Answer.Length) return;
 
         selectedWordIndex.Add(wordData.transform.GetSiblingIndex());
         answerWordArray[currentAnswerIndex].SetChar(wordData.charValue);
         wordData.gameObject.SetActive(false); //so it cant be clicked again
         currentAnswerIndex++;
 
-        if (currentAnswerIndex >= question.answer.Length)
+        if (currentAnswerIndex >= Answer.Length)
         {
             CheckAnswer();
         }
@@ -94,9 +102,14 @@ public class QuizManager : MonoBehaviour
             answerWordArray[i].SetChar('_');
         }
 
-        for (int i = question.answer.Length ; i < answerWordArray.Length; i++)
+        for (int i = Answer.Length ; i < answerWordArray.Length; i++)
         {
             answerWordArray[i].gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < optionsWordArray.Length; i++)
+        {
+           optionsWordArray[i].gameObject.SetActive(true);
         }
     }
 
@@ -116,9 +129,9 @@ public class QuizManager : MonoBehaviour
     private void CheckAnswer()
     {
         correctAnswer = true;
-        for (int i = 0 ; i < question.answer.Length ; i++ )
+        for (int i = 0 ; i < Answer.Length ; i++ )
         {
-            if (char.ToUpper(question.answer[i]) != char.ToUpper(answerWordArray[i].charValue))
+            if (char.ToUpper(Answer[i]) != char.ToUpper(answerWordArray[i].charValue))
             {
                 correctAnswer = false;
                 break;
@@ -127,11 +140,22 @@ public class QuizManager : MonoBehaviour
 
         if (correctAnswer)
         {
+            gameStatus = GameStatus.Next;
             Debug.Log("Correct");
+            if(currentQuestionIndex < questionData.questions.Count)
+            {
+                Invoke("SetQuestion" , 0.5f );
+            }
+            else
+            {
+                gameOver.SetActive(true);
+            }
+            
         }
         else if (!correctAnswer)
         {
             Debug.Log("Incorrect");
+            
         }
         
     }
@@ -147,4 +171,10 @@ public class QuestionData
 {
     public Sprite questionImage;
     public string answer;
+}
+
+public enum GameStatus
+{
+    Playing,
+    Next
 }
