@@ -1,2 +1,2 @@
 # Words
-A word game project
+A word game project with unity 2d
