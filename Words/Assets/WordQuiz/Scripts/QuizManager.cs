@@ -159,8 +159,8 @@ public class QuizManager : MonoBehaviour
             }
             else
             {
-                gameOver.SetActive(true);
                 audioSource1.Stop();
+                gameOver.SetActive(true);
             }
             
         }
