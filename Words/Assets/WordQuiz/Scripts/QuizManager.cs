@@ -27,7 +27,10 @@ public class QuizManager : MonoBehaviour
     private int currentQuestionIndex = 0 ;
     private GameStatus gameStatus = GameStatus.Playing;
     private string Answer;
-    
+    public AudioSource audioSource1;
+    public AudioSource audioSource2;
+    public AudioClip audioClip1;
+    public AudioClip audioClip2;
    
    
     private void Awake()
@@ -42,7 +45,10 @@ public class QuizManager : MonoBehaviour
     private void Start()
     {
         SetQuestion();
-    }
+      /*  AudioSource audioSource1 = GetComponent<AudioSource>();
+        AudioSource audioSource2 = GetComponent<AudioSource>();
+    */
+        }
 
     //seting charachters for answer
     private void SetQuestion()
@@ -142,6 +148,10 @@ public class QuizManager : MonoBehaviour
         {
             gameStatus = GameStatus.Next;
             Debug.Log("Correct");
+            audioSource2.clip = audioClip1;
+            audioSource2.Play();
+
+
             if(currentQuestionIndex < questionData.questions.Count)
             {
                 Invoke("SetQuestion" , 0.5f );
@@ -150,13 +160,16 @@ public class QuizManager : MonoBehaviour
             else
             {
                 gameOver.SetActive(true);
+                audioSource1.Stop();
             }
             
         }
         else if (!correctAnswer)
         {
             Debug.Log("Incorrect");
-            
+            audioSource2.clip = audioClip2;
+            audioSource2.Play();
+
         }
         
     }
