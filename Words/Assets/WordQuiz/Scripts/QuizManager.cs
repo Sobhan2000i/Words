@@ -19,6 +19,8 @@ public class QuizManager : MonoBehaviour
     private WordData[] answerWordArray;
     [SerializeField]
     private WordData[] optionsWordArray;
+    [SerializeField]
+    private Button resetBtn;
 
 
     // Storing all the answers chracter
@@ -138,6 +140,7 @@ public class QuizManager : MonoBehaviour
         currentQuestionIndex = 0;
         audioSource1.Play();
         gameOver.SetActive(false);
+        resetBtn.gameObject.SetActive(false);
         SetQuestion();
     }
 
@@ -170,6 +173,7 @@ public class QuizManager : MonoBehaviour
             else
             {
                 audioSource1.Stop();
+                resetBtn.gameObject.SetActive(true);
                 gameOver.SetActive(true);
             }
             
