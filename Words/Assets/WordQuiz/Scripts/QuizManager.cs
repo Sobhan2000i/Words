@@ -48,9 +48,6 @@ public class QuizManager : MonoBehaviour
     private void Start()
     {
         SetQuestion();
-      /*  AudioSource audioSource1 = GetComponent<AudioSource>();
-        AudioSource audioSource2 = GetComponent<AudioSource>();
-    */
         }
 
     //seting charachters for answer
