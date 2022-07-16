@@ -61,6 +61,7 @@ public class QuizManager : MonoBehaviour
         questionImage.sprite= questionData.questions[currentQuestionIndex].questionImage; 
         Answer = questionData.questions[currentQuestionIndex].answer;
         persianAnswer = questionData.questions[currentQuestionIndex].persian_answer;
+        persian.text = persianAnswer;
 
         ResetQuestion();
 
