@@ -13,6 +13,8 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     private Image questionImage;
     [SerializeField]
+    private Text persian;
+    [SerializeField]
     private WordData[] answerWordArray;
     [SerializeField]
     private WordData[] optionsWordArray;
@@ -27,11 +29,11 @@ public class QuizManager : MonoBehaviour
     private int currentQuestionIndex = 0 ;
     private GameStatus gameStatus = GameStatus.Playing;
     private string Answer;
+    private string persianAnswer;
     public AudioSource audioSource1;
     public AudioSource audioSource2;
     public AudioClip audioClip1;
     public AudioClip audioClip2;
-   
    
     private void Awake()
     {
@@ -55,8 +57,9 @@ public class QuizManager : MonoBehaviour
     {
         currentAnswerIndex = 0;
         selectedWordIndex.Clear();
-        questionImage.sprite= questionData.questions[currentQuestionIndex].questionImage;
+        questionImage.sprite= questionData.questions[currentQuestionIndex].questionImage; 
         Answer = questionData.questions[currentQuestionIndex].answer;
+        persianAnswer = questionData.questions[currentQuestionIndex].persian_answer;
 
         ResetQuestion();
 
@@ -185,6 +188,7 @@ public class QuestionData
 {
     public Sprite questionImage;
     public string answer;
+    public string persian_answer;
 }
 
 public enum GameStatus

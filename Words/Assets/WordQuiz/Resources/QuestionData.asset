@@ -15,7 +15,10 @@ MonoBehaviour:
   questions:
   - questionImage: {fileID: 21300000, guid: 2aa6ab62866ce4439ab7303f7da55e51, type: 3}
     answer: Apple
+    persian_answer: "\u0633\u06CC\u0628"
   - questionImage: {fileID: 21300000, guid: 55e29d9a03fe24caba914d7134c713c5, type: 3}
     answer: Cherry
+    persian_answer: "\u06AF\u06CC\u0644\u0627\u0633"
   - questionImage: {fileID: 21300000, guid: 23de36d9c9c854d4dbb503079e846575, type: 3}
     answer: Corn
+    persian_answer: "\u0630\u0631\u062A"
