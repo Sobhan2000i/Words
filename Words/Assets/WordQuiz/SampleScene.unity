@@ -656,7 +656,7 @@ RectTransform:
   - {fileID: 1175953712}
   - {fileID: 1516591553}
   m_Father: {fileID: 1435795878}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1715,7 +1715,7 @@ RectTransform:
   m_Children:
   - {fileID: 1429081138}
   m_Father: {fileID: 1435795878}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.64400005, y: 0.060000002}
   m_AnchorMax: {x: 0.77000004, y: 0.13375}
@@ -1766,9 +1766,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ResetQuestion
+      - m_Target: {fileID: 1728112002}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1849,7 +1849,7 @@ RectTransform:
   m_Children:
   - {fileID: 1641811690}
   m_Father: {fileID: 1435795878}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79783344, y: 0.060000002}
   m_AnchorMax: {x: 0.9250001, y: 0.13375}
@@ -3087,10 +3087,10 @@ RectTransform:
   - {fileID: 1745157101}
   - {fileID: 546264269}
   - {fileID: 1772006908}
-  - {fileID: 951043532}
   - {fileID: 965226464}
   - {fileID: 2069395435}
   - {fileID: 352663271}
+  - {fileID: 951043532}
   m_Father: {fileID: 1026184511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4533,7 +4533,7 @@ RectTransform:
   - {fileID: 1607173994}
   - {fileID: 943626390}
   m_Father: {fileID: 1435795878}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}

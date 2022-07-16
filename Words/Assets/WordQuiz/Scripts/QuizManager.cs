@@ -132,6 +132,14 @@ public class QuizManager : MonoBehaviour
             answerWordArray[currentAnswerIndex].SetChar('_');
         }
     }
+    
+     public void ResetGame()
+    {
+        currentQuestionIndex = 0;
+        audioSource1.Play();
+        gameOver.SetActive(false);
+        SetQuestion();
+    }
 
 
     private void CheckAnswer()
