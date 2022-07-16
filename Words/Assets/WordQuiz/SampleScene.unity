@@ -3865,7 +3865,7 @@ MonoBehaviour:
   - {fileID: 1192070632}
   - {fileID: 1870146015}
   - {fileID: 1198112501}
-  resetBtn: {fileID: 0}
+  resetBtn: {fileID: 951043533}
   audioSource1: {fileID: 1771834468}
   audioSource2: {fileID: 1166125873}
   audioClip1: {fileID: 8300000, guid: 339bd8a6fb1a3f543bb26fcff5dbcb4c, type: 3}
