@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UPersian.Components;
 
 public class QuizManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     private Image questionImage;
     [SerializeField]
-    private Text persian;
+    private RtlText persian;
     [SerializeField]
     private WordData[] answerWordArray;
     [SerializeField]
