@@ -144,6 +144,21 @@ public class QuizManager : MonoBehaviour
         SetQuestion();
     }
 
+     public IEnumerator AnswerGuide()
+    {
+        for (int i = 0; i < Answer.Length; i++)
+        {
+            answerWordArray[i].SetChar(char.ToUpper(Answer[i]));
+        }
+
+        yield return new WaitForSeconds(3);
+
+        for (int i = 0; i < Answer.Length; i++)
+        {
+           ResetLastWord();
+        }
+    }
+
 
     private void CheckAnswer()
     {
@@ -183,6 +198,7 @@ public class QuizManager : MonoBehaviour
             Debug.Log("Incorrect");
             audioSource2.clip = audioClip2;
             audioSource2.Play();
+            StartCoroutine(AnswerGuide());
 
         }
         
