@@ -1750,6 +1750,7 @@ GameObject:
   - component: {fileID: 847272073}
   - component: {fileID: 847272072}
   - component: {fileID: 847272074}
+  - component: {fileID: 847272075}
   m_Layer: 5
   m_Name: sounds
   m_TagString: Untagged
@@ -1846,6 +1847,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!114 &847272075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847272070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210c90e98be54ff4187372993a6864f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 847272075}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: s2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  soundsBtn: {fileID: 847272072}
 --- !u!1001 &886035952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5289,9 +5318,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
-        m_MethodName: resume
+      - m_Target: {fileID: 1791328305}
+        m_TargetAssemblyTypeName: TextButton, Assembly-CSharp
+        m_MethodName: r
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

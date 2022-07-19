@@ -10,7 +10,7 @@ public class QuizManager : MonoBehaviour
     public static QuizManager instance;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject gameLose;
-    [SerializeField] private GameObject pausePage;
+    [SerializeField] public GameObject pausePage;
     [SerializeField]
     private QuizData questionData;
     [SerializeField]

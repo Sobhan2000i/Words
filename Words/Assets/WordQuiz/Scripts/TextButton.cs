@@ -23,10 +23,13 @@ public class TextButton : MonoBehaviour, IPointerClickHandler
     }
     public void r()
     {
-       // resume();
+        // resume();
+        //QuizManager.resume();
+
     }
     public static void sounds()
     {
+        
         if (AudioListener.pause == true)
         {
             //soundsBtn.text = "(sounds-on)";
