@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 600;
-    public bool timerIsRunning = false;
+    public static float timeRemaining = 10;
+    public static bool timerIsRunning = false;
     public Text timeText;
+    [SerializeField] public GameObject gameLose;
+    public  AudioSource audioSource1;
+    [SerializeField]
+    private Button resetBtn;
     private void Start()
     {
         // Starts the timer automatically
@@ -23,11 +27,18 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                //Debug.Log("Time has run out!");
+                audioSource1.Stop();
+                resetBtn.gameObject.SetActive(true);
+                gameLose.SetActive(true);
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
         }
+    }
+    public static void timeStart() {
+        timeRemaining = 10;
+        timerIsRunning = true;
     }
     void DisplayTime(float timeToDisplay)
     {

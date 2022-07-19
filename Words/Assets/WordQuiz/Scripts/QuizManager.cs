@@ -9,6 +9,7 @@ public class QuizManager : MonoBehaviour
 {
     public static QuizManager instance;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject gameLose;
     [SerializeField]
     private QuizData questionData;
     [SerializeField]
@@ -139,7 +140,9 @@ public class QuizManager : MonoBehaviour
     {
         currentQuestionIndex = 0;
         audioSource1.Play();
+        Timer.timeStart();
         gameOver.SetActive(false);
+        gameLose.SetActive(false);
         resetBtn.gameObject.SetActive(false);
         SetQuestion();
     }
@@ -187,6 +190,7 @@ public class QuizManager : MonoBehaviour
             else
             {
                 audioSource1.Stop();
+                Timer.timerIsRunning = false;
                 resetBtn.gameObject.SetActive(true);
                 gameOver.SetActive(true);
             }
