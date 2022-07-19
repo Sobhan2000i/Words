@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
-    public static float timeRemaining = 10;
+    public static int t = 600;
+    public static float timeRemaining = t;
     public static bool timerIsRunning = false;
     public Text timeText;
     [SerializeField] public GameObject gameLose;
@@ -37,7 +38,7 @@ public class Timer : MonoBehaviour
         }
     }
     public static void timeStart() {
-        timeRemaining = 10;
+        timeRemaining = t;
         timerIsRunning = true;
     }
     void DisplayTime(float timeToDisplay)
