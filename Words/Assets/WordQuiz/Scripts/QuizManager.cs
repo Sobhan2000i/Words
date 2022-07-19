@@ -159,7 +159,6 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-
     private void CheckAnswer()
     {
         correctAnswer = true;
