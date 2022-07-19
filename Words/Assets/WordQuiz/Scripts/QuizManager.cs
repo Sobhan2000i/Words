@@ -141,6 +141,18 @@ public class QuizManager : MonoBehaviour
         audioSource1.Stop();
         Timer.timerIsRunning = false;
         pausePage.SetActive(true);
+    
+    }
+    public static void quit()
+    {
+        Application.Quit();
+    }
+    public  void resume()
+    {
+        audioSource1.Play();
+        Timer.timerIsRunning = true;
+        pausePage.SetActive(false);
+
     }
     public void ResetGame()
     {
