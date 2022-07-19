@@ -14,32 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - questionImage: {fileID: 21300000, guid: 2aa6ab62866ce4439ab7303f7da55e51, type: 3}
-    answer: Apple
+    answer: apple
     persian_answer: "\u0633\u06CC\u0628"
-  - questionImage: {fileID: 21300000, guid: 55e29d9a03fe24caba914d7134c713c5, type: 3}
-    answer: Cherry
-    persian_answer: "\u06AF\u06CC\u0644\u0627\u0633"
-  - questionImage: {fileID: 21300000, guid: 23de36d9c9c854d4dbb503079e846575, type: 3}
-    answer: Corn
-    persian_answer: "\u0630\u0631\u062A"
-  - questionImage: {fileID: 21300000, guid: cc8eede50ee1f49efa314de75e5506e3, type: 3}
-    answer: kiwi
-    persian_answer: "\u06A9\u06CC\u0648\u06CC"
-  - questionImage: {fileID: 21300000, guid: f6d5f58465fff456eb84bd071b3134b9, type: 3}
-    answer: lemon
-    persian_answer: "\u0644\u06CC\u0645\u0648"
-  - questionImage: {fileID: 21300000, guid: 1fbdfb9bf6c2e4397a1d62eed589ec1f, type: 3}
-    answer: carrot
-    persian_answer: "\u0647\u0648\u06CC\u062C"
-  - questionImage: {fileID: 21300000, guid: 0b97d02305ef74e7ea0cb413d9cc158a, type: 3}
-    answer: avocado
-    persian_answer: "\u0622\u0648\u0627\u06A9\u0627\u062F\u0648 "
-  - questionImage: {fileID: 21300000, guid: 50e0347d981414d189ff77217bc6e69c, type: 3}
-    answer: banana
-    persian_answer: "\u0645\u0648\u0632"
-  - questionImage: {fileID: 21300000, guid: 636ed3763815e48fb855165bd6e3bc89, type: 3}
-    answer: melon
-    persian_answer: "\u0637\u0627\u0644\u0628\u06CC"
-  - questionImage: {fileID: 21300000, guid: 31740551f69654fb7bc2a39c35d57d9c, type: 3}
-    answer: pear
-    persian_answer: "\u06AF\u0644\u0627\u0628\u06CC"
