@@ -178,12 +178,12 @@ public class QuizManager : MonoBehaviour
         {
             gameStatus = GameStatus.Next;
             Debug.Log("Correct");
-            audioSource2.clip = audioClip1;
-            audioSource2.Play();
-
+            
 
             if(currentQuestionIndex < questionData.questions.Count)
             {
+                audioSource2.clip = audioClip1;
+                audioSource2.Play();
                 Invoke("SetQuestion" , 0.5f );
                 
             }
