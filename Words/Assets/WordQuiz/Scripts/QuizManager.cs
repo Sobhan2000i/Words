@@ -10,6 +10,7 @@ public class QuizManager : MonoBehaviour
     public static QuizManager instance;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject gameLose;
+    [SerializeField] private GameObject pausePage;
     [SerializeField]
     private QuizData questionData;
     [SerializeField]
@@ -135,8 +136,13 @@ public class QuizManager : MonoBehaviour
             answerWordArray[currentAnswerIndex].SetChar('_');
         }
     }
-    
-     public void ResetGame()
+    public void pause()
+    {
+        audioSource1.Stop();
+        Timer.timerIsRunning = false;
+        pausePage.SetActive(true);
+    }
+    public void ResetGame()
     {
         currentQuestionIndex = 0;
         audioSource1.Play();
