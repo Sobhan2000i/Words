@@ -12,22 +12,9 @@ public class TextButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         //Output to console the clicked GameObject's name and the following message. You can replace this with your own actions for when clicking the GameObject.
-        Debug.Log(name + " Game Object Clicked!", this);
+       // Debug.Log(name + " Game Object Clicked!", this);
 
         // invoke your event
         onClick.Invoke();
-    }
-    public static void sounds()
-    {
-        
-        if (AudioListener.pause == true)
-        {
-            //soundsBtn.text = "(sounds-on)";
-            AudioListener.pause = false;
-        }else
-        {
-           // soundsBtn.text = "(sounds-off)";
-            AudioListener.pause = true;
-        }
     }
 }

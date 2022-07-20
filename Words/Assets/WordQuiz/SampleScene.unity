@@ -1854,7 +1854,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847272070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1900,7 +1900,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (sounds-on/off)
+  m_Text: (sounds-on)
 --- !u!222 &847272073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1924,9 +1924,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 847272074}
-        m_TargetAssemblyTypeName: TextButton, Assembly-CSharp
-        m_MethodName: sounds
+      - m_Target: {fileID: 1728112002}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: sooundonoff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2668,9 +2668,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1003978406}
-        m_TargetAssemblyTypeName: TextButton, Assembly-CSharp
-        m_MethodName: e
+      - m_Target: {fileID: 1728112002}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5082,6 +5082,7 @@ MonoBehaviour:
   - {fileID: 1870146015}
   - {fileID: 1198112501}
   resetBtn: {fileID: 951043533}
+  soundBtn: {fileID: 847272072}
   audioSource1: {fileID: 1771834468}
   audioSource2: {fileID: 1166125873}
   audioClip1: {fileID: 8300000, guid: 339bd8a6fb1a3f543bb26fcff5dbcb4c, type: 3}
@@ -5515,9 +5516,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1791328305}
-        m_TargetAssemblyTypeName: TextButton, Assembly-CSharp
-        m_MethodName: r
+      - m_Target: {fileID: 1728112002}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

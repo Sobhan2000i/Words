@@ -23,6 +23,8 @@ public class QuizManager : MonoBehaviour
     private WordData[] optionsWordArray;
     [SerializeField]
     private Button resetBtn;
+    [SerializeField]
+    private Text soundBtn;
 
 
     // Storing all the answers chracter
@@ -136,17 +138,20 @@ public class QuizManager : MonoBehaviour
             answerWordArray[currentAnswerIndex].SetChar('_');
         }
     }
+    
     public void pause()
     {
-        //audioSource1.Stop();
+        audioSource1.Stop();
         Timer.timerIsRunning = false;
         pausePage.SetActive(true);
     
     }
+    
     public static void quit()
     {
         Application.Quit();
     }
+
     public  void resume()
     {
         audioSource1.Play();
@@ -154,6 +159,7 @@ public class QuizManager : MonoBehaviour
         pausePage.SetActive(false);
 
     }
+    
     public void ResetGame()
     {
         currentQuestionIndex = 0;
@@ -163,6 +169,19 @@ public class QuizManager : MonoBehaviour
         gameLose.SetActive(false);
         resetBtn.gameObject.SetActive(false);
         SetQuestion();
+    }
+
+    public void sooundonoff() {
+        if (AudioListener.pause == true)
+        {
+            soundBtn.text = "(sounds-on)";
+            AudioListener.pause = false;
+        }
+        else
+        {
+             soundBtn.text = "(sounds-off)";
+            AudioListener.pause = true;
+        }
     }
 
      public IEnumerator AnswerGuide()
