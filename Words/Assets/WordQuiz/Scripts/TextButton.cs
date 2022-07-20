@@ -17,16 +17,6 @@ public class TextButton : MonoBehaviour, IPointerClickHandler
         // invoke your event
         onClick.Invoke();
     }
-        public void e()
-        {
-        QuizManager.quit();   
-    }
-    public void r()
-    {
-        // resume();
-        //QuizManager.resume();
-
-    }
     public static void sounds()
     {
         
