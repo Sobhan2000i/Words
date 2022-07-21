@@ -190,12 +190,12 @@ public class QuizManager : MonoBehaviour
     public void sooundonoff() {
         if (AudioListener.pause == true)
         {
-            soundBtn.text = "(sounds-on)";
+            soundBtn.text = "(Sound-On)";
             AudioListener.pause = false;
         }
         else
         {
-             soundBtn.text = "(sounds-off)";
+             soundBtn.text = "(Sounds-Off)";
             AudioListener.pause = true;
         }
     }
