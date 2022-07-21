@@ -44,7 +44,8 @@ public class QuizManager : MonoBehaviour
     public AudioSource audioSource2;
     public AudioClip audioClip1;
     public AudioClip audioClip2;
-   
+    public AudioSource googleAudio;
+
     private void Awake()
     {
         if(instance == null) instance = this;
@@ -58,7 +59,15 @@ public class QuizManager : MonoBehaviour
     {
         SetQuestion();
         }
-
+    IEnumerator DownoadTheAudio()
+    {
+        string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer;
+        WWW www = new WWW(url);
+        yield return www;
+        googleAudio.clip = www.GetAudioClip(false, true, AudioType.MPEG);
+        googleAudio.Play();
+        Debug.Log(1);
+    }
     //seting charachters for answer
     private void SetQuestion()
     {
@@ -144,6 +153,7 @@ public class QuizManager : MonoBehaviour
     
     public void pause()
     {
+        
         audioSource1.Stop();
         Timer.timerIsRunning = false;
         pausePage.SetActive(true);
@@ -157,6 +167,7 @@ public class QuizManager : MonoBehaviour
     public void hint_function1()
     {
         hintText.text = Answer + "\n\n-5 sec";
+        DownoadTheAudio();
         hint.SetActive(true);
         // yield return new WaitForSeconds(1);
         //System.Threading.Thread.Sleep(1);
