@@ -153,11 +153,22 @@ public class QuizManager : MonoBehaviour
     {
         Application.Quit();
     }
-    public void hint_function()
+    public void hint_function1()
     {
-        StartCoroutine(AnswerGuide());
+        hintText.text = Answer + "\n\n-5 sec";
+        hint.SetActive(true);
+        // yield return new WaitForSeconds(1);
+        //System.Threading.Thread.Sleep(1);
+        Invoke("hint_function2", 1f);
     }
-    public  void resume()
+    public void hint_function2()
+    {
+        hint.SetActive(false);
+        Timer.timeRemaining = Timer.timeRemaining - 4;
+
+    }
+
+    public void resume()
     {
         audioSource1.Play();
         Timer.timerIsRunning = true;

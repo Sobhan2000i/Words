@@ -4668,7 +4668,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1728112002}
         m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
-        m_MethodName: hint_function
+        m_MethodName: hint_function1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5349,7 +5349,7 @@ MonoBehaviour:
   gameOver: {fileID: 352663270}
   gameLose: {fileID: 1032599722}
   pausePage: {fileID: 1354391598}
-  hint: {fileID: 1537888599}
+  hint: {fileID: 1877677331}
   questionData: {fileID: 11400000, guid: 415cf1838064d7a42a0cdd3e0d36a724, type: 2}
   questionImage: {fileID: 1170507036}
   persian: {fileID: 943626392}
@@ -6025,7 +6025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030515}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877677333
