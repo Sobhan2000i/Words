@@ -11,6 +11,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject gameLose;
     [SerializeField] public GameObject pausePage;
+    [SerializeField] public GameObject hint;
     [SerializeField]
     private QuizData questionData;
     [SerializeField]
@@ -25,7 +26,8 @@ public class QuizManager : MonoBehaviour
     private Button resetBtn;
     [SerializeField]
     private Text soundBtn;
-
+    [SerializeField]
+    private Text hintText;
 
     // Storing all the answers chracter
     private char[] charArray = new char[12];
@@ -151,7 +153,10 @@ public class QuizManager : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void hint_function()
+    {
+        StartCoroutine(AnswerGuide());
+    }
     public  void resume()
     {
         audioSource1.Play();
