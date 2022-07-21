@@ -28,7 +28,8 @@ public class QuizManager : MonoBehaviour
     private Text soundBtn;
     [SerializeField]
     private Text hintText;
-
+    [SerializeField]
+    private Text winText;
     // Storing all the answers chracter
     private char[] charArray = new char[12];
     // store next blank
@@ -243,7 +244,8 @@ public class QuizManager : MonoBehaviour
             else
             {
                 audioSource1.Stop();
-                Timer.timerIsRunning = false;
+                winText.text = "YOU\nWON\n\n\ntime left: " +(int)Timer.timeRemaining+" seconds"; 
+                    Timer.timerIsRunning = false;
                 resetBtn.gameObject.SetActive(true);
                 gameOver.SetActive(true);
             }

@@ -3605,7 +3605,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You
 
-    WIN'
+    WON'
 --- !u!222 &1175953714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5377,6 +5377,7 @@ MonoBehaviour:
   resetBtn: {fileID: 951043533}
   soundBtn: {fileID: 847272072}
   hintText: {fileID: 518911879}
+  winText: {fileID: 1175953713}
   audioSource1: {fileID: 1771834468}
   audioSource2: {fileID: 1166125873}
   audioClip1: {fileID: 8300000, guid: 339bd8a6fb1a3f543bb26fcff5dbcb4c, type: 3}
