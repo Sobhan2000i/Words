@@ -195,7 +195,7 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-             soundBtn.text = "(Sounds-Off)";
+             soundBtn.text = "(Sound-Off)";
             AudioListener.pause = true;
         }
     }
