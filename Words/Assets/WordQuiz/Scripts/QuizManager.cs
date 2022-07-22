@@ -156,8 +156,14 @@ public class QuizManager : MonoBehaviour
             answerWordArray[currentAnswerIndex].SetChar('_');
         }
     }
-    
-    public void pause()
+    public void reseAllLetters()
+    {
+        for (int i = 0; i < Answer.Length; i++)
+        {
+            ResetLastWord();
+        }
+    }
+public void pause()
     {
         
         audioSource1.Stop();
@@ -246,11 +252,7 @@ public class QuizManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(3);
-
-        for (int i = 0; i < Answer.Length; i++)
-        {
-           ResetLastWord();
-        }
+        reseAllLetters();
     }
 
     private void CheckAnswer()
