@@ -13,6 +13,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] public GameObject pausePage;
     [SerializeField] public GameObject hint;
     [SerializeField] public GameObject timeHolder;
+    [SerializeField] public GameObject soundHolder;
     [SerializeField]
     private QuizData questionData;
     [SerializeField]
@@ -65,10 +66,13 @@ public class QuizManager : MonoBehaviour
     public void  DownoadTheAudio()
     {
         string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+"&r=-3";
-        WWW www = new WWW(url);
-        //yield return www;
-        googleAudio.clip = www.GetAudioClip(false, true, AudioType.WAV);
-        googleAudio.Play();
+        if ((AudioListener.pause == true))
+        {
+            WWW www = new WWW(url);
+            //yield return www;
+            googleAudio.clip = www.GetAudioClip(false, true, AudioType.WAV);
+            googleAudio.Play();
+        }
     }
     //seting charachters for answer
     private void SetQuestion()
@@ -222,6 +226,7 @@ public class QuizManager : MonoBehaviour
     public void sooundonoff() {
         if (AudioListener.pause == true)
         {
+            soundHolder.SetActive(true);
             soundBtn.text = "(Sound-On)";
             AudioListener.pause = false;
         }
@@ -229,6 +234,7 @@ public class QuizManager : MonoBehaviour
         {
              soundBtn.text = "(Sound-Off)";
             AudioListener.pause = true;
+            soundHolder.SetActive(false);
         }
     }
 
