@@ -61,7 +61,7 @@ public class QuizManager : MonoBehaviour
         }
     public void  DownoadTheAudio()
     {
-        string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer;
+        string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+"&r=-3";
         WWW www = new WWW(url);
         //yield return www;
         googleAudio.clip = www.GetAudioClip(false, true, AudioType.WAV);
