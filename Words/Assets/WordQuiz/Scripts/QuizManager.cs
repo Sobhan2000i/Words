@@ -196,7 +196,7 @@ public void pause()
     {
         DownoadTheAudio();
         if (timerBtn.text == "(timer-on)")
-            hintText.text = Answer + "\n\n-5 sec";
+            hintText.text = Answer.ToUpper() + "\n\n-5 sec";
        else
             hintText.text = Answer;
         hint.SetActive(true);
