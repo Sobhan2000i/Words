@@ -65,12 +65,14 @@ public class QuizManager : MonoBehaviour
         }
     public void  DownoadTheAudio()
     {
-        string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+"&r=-3";
+        string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+ "&r=-3";
+        //string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+ "&r=-3&c=MP3";
         if ((AudioListener.pause == true))
         {
             WWW www = new WWW(url);
             //yield return www;
-            googleAudio.clip = www.GetAudioClip(false, true, AudioType.WAV);
+              googleAudio.clip = www.GetAudioClip(false, true, AudioType.WAV);
+           // googleAudio.clip =new  NAudioPlayer.FromMp3Data(www.bytes);
             googleAudio.Play();
         }
     }
