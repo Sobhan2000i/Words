@@ -12,6 +12,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private GameObject gameLose;
     [SerializeField] public GameObject pausePage;
     [SerializeField] public GameObject hint;
+    [SerializeField] public GameObject timeHolder;
     [SerializeField]
     private QuizData questionData;
     [SerializeField]
@@ -26,6 +27,8 @@ public class QuizManager : MonoBehaviour
     private Button resetBtn;
     [SerializeField]
     private Text soundBtn;
+    [SerializeField]
+    private  Text timerBtn;
     [SerializeField]
     private Text hintText;
     [SerializeField]
@@ -162,6 +165,20 @@ public class QuizManager : MonoBehaviour
     public static void quit()
     {
         Application.Quit();
+    }
+    public  void timerOnOff()
+    {
+        if (timerBtn.text== "(timer-off)")
+        {
+            timerBtn.text = "(timer-on)";
+            timeHolder.SetActive(true);
+        }
+        else
+        {
+            timerBtn.text = "(timer-off)";
+            timeHolder.SetActive(false);
+        }
+       
     }
     public void hint_function1()
     {
