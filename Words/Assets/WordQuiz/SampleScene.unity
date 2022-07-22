@@ -5905,7 +5905,7 @@ MonoBehaviour:
   hint: {fileID: 1877677331}
   timeHolder: {fileID: 1028127290}
   soundHolder: {fileID: 1915877851}
-  questionData: {fileID: 11400000, guid: 415cf1838064d7a42a0cdd3e0d36a724, type: 2}
+  questionData: {fileID: 11400000, guid: 4bfa6ff7d804aea469e456fa17d8c5c6, type: 2}
   questionImage: {fileID: 1170507036}
   persian: {fileID: 943626392}
   answerWordArray:
