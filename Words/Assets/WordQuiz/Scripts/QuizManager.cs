@@ -183,7 +183,10 @@ public class QuizManager : MonoBehaviour
     public void hint_function1()
     {
         DownoadTheAudio();
-        hintText.text = Answer + "\n\n-5 sec";
+        if (timerBtn.text == "(timer-on)")
+            hintText.text = Answer + "\n\n-5 sec";
+       else
+            hintText.text = Answer;
         hint.SetActive(true);
         // yield return new WaitForSeconds(1);
         //System.Threading.Thread.Sleep(1);
@@ -192,6 +195,7 @@ public class QuizManager : MonoBehaviour
     public void hint_function2()
     {
         hint.SetActive(false);
+       if(timerBtn.text == "(timer-on)")
         Timer.timeRemaining = Timer.timeRemaining - 4;
 
     }
