@@ -67,7 +67,7 @@ public class QuizManager : MonoBehaviour
     {
         string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+ "&r=-3";
         //string url = "http://api.voicerss.org/?key=afc4e28b1aed4c71866161a3a22585c3&hl=en-us&src=" + Answer+ "&r=-3&c=MP3";
-        if ((AudioListener.pause == true))
+        if ((AudioListener.pause == false))
         {
             WWW www = new WWW(url);
             //yield return www;
